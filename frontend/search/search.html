@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link href="./search.css">
 </head>
 <body>
-    
+    <div id="leftSide">
+        <div id="searchBar"></div>
+        <div id="settingsButtons"></div>
+        <div id="searchResultCategories"></div>
+        <!-- Okay so the structure of the search results is like so:
+            [Favicon] [Website Name]        [...] <-- (Trackers and Ads and Detect Scam & Malware buttons)
+                       [URL]
+                       [Website Title]
+            [Description]
+        -->
+        <div id="searchResults"></div>
+    </div>
+    <script src="./search.js"></script>
 </body>
 </html>

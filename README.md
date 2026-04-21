@@ -1,4 +1,4 @@
-# LabSearch
+# MetaSE
 
 Customizable Meta Search Engine.
 

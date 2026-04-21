@@ -1,7 +1,7 @@
-import * as inhouseUtils from "../inhouseUtils";
+import * as inhouseUtils from "../inhouseUtils.js";
 import * as cheerio from "cheerio";
 
-async function scrapeBingImages(query) {
+export async function scrapeBingImages(query) {
     await inhouseUtils.randomDelay();
     const html = await inhouseUtils.fetchHtml(`https://www.bing.com/images/search?q=${encodeURIComponent(query)}`);
     const $ = cheerio.load(html);

@@ -1,7 +1,7 @@
-import * as inhouseUtils from "../inhouseUtils";
+import * as inhouseUtils from "../inhouseUtils.js";
 import * as cheerio from "cheerio";
 
-async function scrapeBraveSearchImages(query) {
+export async function scrapeBraveSearchImages(query) {
     await inhouseUtils.randomDelay();
     const html = await inhouseUtils.fetchHtml(`https://search.brave.com/images?q=${encodeURIComponent(query)}`);
     const $ = cheerio.load(html);

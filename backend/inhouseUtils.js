@@ -1,5 +1,4 @@
 import { getRandom as getRandomUserAgent } from "random-useragent";
-import { fetch } from "node-fetch";
 
 
 function getRandomHeaders() {
@@ -18,11 +17,11 @@ function getRandomHeaders() {
     };
 }
 
-function randomDelay(min = 60, max = 100) {
+export function randomDelay(min = 60, max = 100) {
     return new Promise(resolve => setTimeout(resolve, Math.random() * (max - min) + min));
 }
 
-async function fetchHtml(url, retries = 3) {
+export async function fetchHtml(url, retries = 3) {
     for (let i = 0; i < retries; i++) {
         try {
             const res = await fetch(url, { headers: getRandomHeaders() });

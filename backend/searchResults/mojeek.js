@@ -1,4 +1,4 @@
-import * as inhouseUtils from "../inhouseUtils";
+import * as inhouseUtils from "../inhouseUtils.js";
 import * as cheerio from "cheerio";
 
 async function getMojeekSearchPageUrl(query, page = 1) {
@@ -18,7 +18,7 @@ async function getMojeekSearchPageUrl(query, page = 1) {
     return `https://www.mojeek.com${paginationLinks[page - 1]}`;
 }
 
-async function parseMojeekPage(query, page) {
+export async function parseMojeekPage(query, page) {
     await inhouseUtils.randomDelay();
     const url = await getMojeekSearchPageUrl(query, page);
     const html = await inhouseUtils.fetchHtml(url);
@@ -40,7 +40,7 @@ async function parseMojeekPage(query, page) {
     );
 }
 
-async function* scrapeMojeek(query, maxPages = 3) {
+export async function* scrapeMojeek(query, maxPages = 3) {
     for (let i = 1; i <= maxPages; i++) {
         const items = await parseMojeekPage(query, i);
         for (const item of items) yield item;

@@ -13,12 +13,12 @@ export async function scrapeBraveSearchImages(query) {
         const image = img.attr("src");
         const description = img.attr("alt");
         const index = button.attr("data-index");
-        const source = button.find(".image-metadata-source").text().trim();
+        const link = button.find(".image-metadata-source").text().trim();
         return {
             type: "image",
+            link,
             image,
             description,
-            source,
             index
         };
     }).filter(Boolean);

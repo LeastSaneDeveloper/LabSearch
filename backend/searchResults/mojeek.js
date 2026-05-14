@@ -13,7 +13,8 @@ export function paginate(query, page = 1) {
     return `https://mojeek.com/search?q=${encodedQuery}&s=${start}`;
 }
 
-export function parse(html, page = 1) {
+export async function parse(html, page = 1) {
+    await inhouseUtils.randomDelay();
     const $ = cheerio.load(html);
     const results = [];
 

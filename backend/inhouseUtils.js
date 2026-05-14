@@ -36,3 +36,13 @@ export async function fetchHtml(url, retries = 3) {
     }
     throw new Error(`Failed to fetch ${url}`);
 }
+
+// this function is only for search engines that don't provide favicons in their search results
+export function getFaviconFromWebsite(url) {
+    try {
+        const parsed = new URL(url);
+        return `${parsed.origin}/favicon.ico`;
+    } catch {
+        return null;
+    }
+}

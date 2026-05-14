@@ -11,10 +11,10 @@ import * as braveSearchImageResults from "./imageResults/braveSearch.js";
     console.log(mojeekSearchResultsList);
 
     console.log("=== Brave Search Images ===");
-    let braveImageResultsList = await braveSearchImageResults.scrapeBraveSearchImages(query, );
+    let braveImageResultsList = await braveSearchImageResults.scrape(query, );
     console.log(braveImageResultsList)
 
     console.log("\n=== Bing Images ===");
-    const bingImageResultsList = await bingImageResults.scrapeBingImages(query);
+    const bingImageResultsList = await bingImageResults.scrape(query);
     console.log(bingImageResultsList)
 })();

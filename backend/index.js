@@ -7,14 +7,14 @@ import * as braveSearchImageResults from "./imageResults/braveSearch.js";
     const query = "test";
 
     console.log("=== Mojeek Search ===");
-    const results = await mojeekSearchResults.scrapeMojeek(query);
-    results.forEach(result => console.log(result));
+    let mojeekSearchResultsList = await mojeekSearchResults.scrape(query, 2);
+    console.log(mojeekSearchResultsList);
 
-    // console.log("=== Brave Search Images ===");
-    // const results = await braveSearchImageResults.scrapeBraveSearchImages(query, );
-    // results.forEach(result => console.log(result));
+    console.log("=== Brave Search Images ===");
+    let braveImageResultsList = await braveSearchImageResults.scrapeBraveSearchImages(query, );
+    console.log(braveImageResultsList)
 
-    // console.log("\n=== Bing Images ===");
-    // const images = await bingImageResults.scrapeBingImages(query);
-    // images.forEach(img => console.log(img));
+    console.log("\n=== Bing Images ===");
+    const bingImageResultsList = await bingImageResults.scrapeBingImages(query);
+    console.log(bingImageResultsList)
 })();

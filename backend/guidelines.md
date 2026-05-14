@@ -1,5 +1,7 @@
 # Guidelines
 
+Each script should have 3 main functions: paginate(), parse(), scrape().
+
 In general, results (not to be confused with search results) should have these attributes in common:
 
 {

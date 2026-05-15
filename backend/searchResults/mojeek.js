@@ -4,12 +4,15 @@ import * as cheerio from "cheerio";
 export function paginate(query, page = 1) {
     const encodedQuery = encodeURIComponent(query);
 
+    // TODO: explain mojeek's pagination
+    
     if (page <= 1) {
         return `https://mojeek.com/search?q=${encodedQuery}`;
     }
 
     const start = (page - 1) * 10 + 1;
 
+    // TODO: shift from manual url construction to using URL()
     return `https://mojeek.com/search?q=${encodedQuery}&s=${start}`;
 }
 
